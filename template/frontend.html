@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<title>Femdle</title>
+<head>
+</head>
+<body>
+    {% if error %}  
+        <p><strong>Error</strong>: {{error}}</p>  
+    {% endif %}  
+
+    <form id="guessword" method="POST">
+    <label>Guess the Name of Women in STEM! 👩🏻‍💻</label> 
+    <input type="text" name="guessname" id="guessname">
+    <button id = "check" type="submit" onclick="updateWord()"> I'M CONFIDENT</button>
+    </form>
+
+    <div id="hint">
+        Number of letters:
+    </div>
+
+    <script type="text/javascript">
+        var true_length = JSON.parse('{{ true_length | tojson | safe}}')
+        let hint = document.querySelector("#hint")
+
+        length = true_length['length'];
+        hint.innerHTML += length;
+    </script>
+
+</body>
+</html>
