@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<html>
+
+<style>
+    h1 {text-align: center;
+        font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    .board {
+        display: flex;
+        flex-direction: column;
+    }
+    [class ^="row-"] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+    [class ^="row-"] > div {
+        width: 60px;
+        margin: 3px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 30px;
+        border: 2px solid #d3d6da;
+    }
+    .input-box{
+    	position: absolute;
+        bottom: 30%;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+    }
+</style>    
+
+<head>
+    <title>Femdle</title>
+</head>
+    
+<body>     
+    <h1>Femdle</h1>
+    <!--<script type="text/javascript">
+    var input_arr = [];
+    var row = 1;
+    var col = 1;
+    var game_over = False;
+    var true_name = ['S','U','N','M','I'] // Hard coded example
+    while (!game_over) {
+        document.addEventListener('keydown', (event) => {
+        var name = event.key;
+        if (name=='Enter' && len(input_arr) == 5) {
+            //get_colors(true_name, input_arr)
+            row += 1;
+            input_arr = [];
+            alert(`Key pressed:`, input_arr);
+        } else if (name=='Backspace') {
+            input_arr.pop();
+            document.getElementById('elem' + row + col).innerHTML = '\u00A0';
+            col -= 1;
+        } else if ((/[a-zA-Z]/).test(name)) { // Need better way to check if letter
+            document.getElementById('elem' + row + col).innerHTML = name.toUpperCase(); // Display letter on screen
+            input_arr.push(name.toUpperCase())
+            col += 1;
+        }
+        }, false);
+    } -->
+    <script type="text/javascript">
+    var input_str = [];
+    var row = 1;
+    var col = 1;
+    document.addEventListener('keydown', (event) => {
+    var name = event.key;
+    if (name=='Enter' && len(input_str) == 5) {
+        // Call function to color boxes
+        row += 1;
+        input_str = [];
+    } else if (name=='Backspace') {
+        input_str.pop();
+        document.getElementById('elem' + row + col).innerHTML = '\u00A0';
+        col -= 1;
+    } else if ((/[a-zA-Z]/).test(name)) { // Need better way to check if letter
+        document.getElementById('elem' + row + col).innerHTML = name.toUpperCase();
+        input_str.push(name.toUpperCase())
+        col += 1;
+    }
+    }, false);
+
+    // Returns array of colors by comparing guess array to answer array
+    //function get_colors(answer, guess) {
+    //    var colors = []
+    //    var answer_copy = answer
+    //    for (i in range(len(answer))){ 
+    //        var guess_char = guess[i]
+    //        if (guess_char == answer[i]){
+    //            colors.append('green')
+    //            answer_copy.remove(guess_char)
+    //        } else if (guess_char in answer_array){
+    //            colors.append('yellow')
+    //        } else{
+    //            colors.append('gray')
+    //        }
+    //    }
+    //    return colors
+    //}
+
+    // Update tiles on webpage
+    //function update_tiles(colors, row, col){
+    //    for (color in colors) {
+    //        if (color == 'green'){
+    //        } else if (color == 'yellow'){
+    //        } else{
+    //        }
+    //        col += 1;
+    //    }
+    //}
+    </script>   
+
+    <div class="board">
+        <div class="row-1">
+            <div id="elem11">&nbsp</div>
+            <div id="elem12"></div>
+            <div id="elem13"></div>  
+            <div id="elem14"></div>
+            <div id="elem15"></div>
+        </div>
+        <div class="row-2">
+            <div id="elem21">&nbsp</div>
+            <div id="elem22"></div>
+            <div id="elem23"></div>  
+            <div id="elem24"></div>
+            <div id="elem25"></div>
+        </div>
+        <div class="row-3">
+            <div id="elem31">&nbsp</div>
+            <div id="elem32"></div>
+            <div id="elem33"></div>  
+            <div id="elem34"></div>
+            <div id="elem35"></div>
+        </div>
+        <div class="row-4">
+            <div id="elem41">&nbsp</div>
+            <div id="elem42"></div>
+            <div id="elem43"></div>  
+            <div id="elem44"></div>
+            <div id="elem45"></div>
+        </div>
+        <div class="row-5">
+            <div id="elem51">&nbsp</div>
+            <div id="elem52"></div>
+            <div id="elem53"></div>  
+            <div id="elem54"></div>
+            <div id="elem55"></div>
+        </div>
+        <div class="row-6">
+        	<div id="elem61">&nbsp</div>
+      		<div id="elem61"></div>
+      		<div id="elem61"></div>  
+      		<div id="elem61"></div>
+      		<div id="elem61"></div>
+        </div>
+    </div>
+</body>
+
+</html>
